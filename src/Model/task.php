@@ -40,7 +40,7 @@ class Task
       return $this->getTask($this->database->lastInsertId());
     }
     
-    public function updatetask($data)
+    public function updateTask($data)
     {
       $statement = $this->database->prepare(
         'UPDATE tasks SET task=:task, status=:status WHERE id=:id'
@@ -52,7 +52,7 @@ class Task
       return $this->getTask($data['task_id']);
     }
     
-    public function deletetask($task_id)
+    public function deleteTask($task_id)
     {
       $statement = $this->database->prepare(
         'DELETE FROM tasks WHERE id=:id'
